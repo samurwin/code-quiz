@@ -22,13 +22,14 @@ h4, span {
     font-weight: normal;
 }
 
-/* body styles */
+/* intro screen styles */
 .intro {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin: 50px;
 }
 .intro p {
     padding: 25px;
@@ -45,5 +46,37 @@ button {
     font-size: 18px;
 }
 button:hover {
+    background-color: darkorchid;
+}
+
+/* question styles */
+.question-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+.question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 50px;
+    background-color: white;
+}
+.question h1 {
+text-align: left;
+}
+.question a {
+    margin: 5px 0;
+    width: 200px;
+    background-color: darkslateblue;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.question a:hover {
     background-color: darkorchid;
 }
