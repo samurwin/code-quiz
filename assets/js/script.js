@@ -1,4 +1,5 @@
 var startPageEl = document.querySelector("#start");
+var headerEl = document.querySelector("#header");
 var startButtonEl = document.querySelector("#btn-start");
 var pageContentEl = document.querySelector("#page-content");
 var timerEl = document.querySelector("#timer");
@@ -203,10 +204,35 @@ var endGame = function() {
     flexContainerEl.appendChild(endContainerEl);
 }
 
-var submitScore = function() {
-    
+var submitScore = function(event) {
+    var tagetEl = event.target;
+
+    if (tagetEl.matches("#submit-score")) {
+        var finalScore = {
+            score: timerEl.textContent,
+            name: document.querySelector("input").value,
+        }
+        localStorage.setItem("score", JSON.stringify(finalScore));
+    }
 }
 
+var viewScores = function(event) {
+    var targetEl = event.target;
+    
+    if (targetEl.matches("#view-scores")) {
+        var highScore = localStorage.getItem("score");
+        highScore = JSON.parse(highScore);
+
+        var nameEl = document.createElement("h3");
+        nameEl.textContent = highScore.name;
+        flexContainerEl.appendChild(nameEl)
+        var scoreEl = document.createElement("h3");
+        scoreEl.textContent = highScore.score;
+        flexContainerEl.appendChild(scoreEl);
+    }
+}
+
+headerEl.addEventListener("click", viewScores);
 flexContainerEl.addEventListener("click", submitScore);
 startButtonEl.addEventListener("click", startQuiz);
 pageContentEl.addEventListener("click", answerHandler);

@@ -108,3 +108,8 @@ width: 100%;
 h2 {
     font-weight: normal;
 }
+
+.question-container h3 {
+    color:darkorchid;
+    font-size: 28px;
+}
