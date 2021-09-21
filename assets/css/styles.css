@@ -109,7 +109,12 @@ h2 {
     font-weight: normal;
 }
 
-.question-container h3 {
-    color:darkorchid;
+ h3 {
+    background-color: lavender;
+    padding: 10px;
     font-size: 28px;
+    font-weight: normal;
+    margin: 20px 0;
+    width: 30%;
+    text-align: center;
 }

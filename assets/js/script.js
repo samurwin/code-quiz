@@ -220,15 +220,18 @@ var viewScores = function(event) {
     var targetEl = event.target;
     
     if (targetEl.matches("#view-scores")) {
+        startPageEl.remove();
+
         var highScore = localStorage.getItem("score");
         highScore = JSON.parse(highScore);
 
-        var nameEl = document.createElement("h3");
-        nameEl.textContent = highScore.name;
-        flexContainerEl.appendChild(nameEl)
         var scoreEl = document.createElement("h3");
-        scoreEl.textContent = highScore.score;
+        scoreEl.textContent = highScore.name + " - " + highScore.score;
         flexContainerEl.appendChild(scoreEl);
+
+        var scoreTitleEl = document.createElement("h1");
+        scoreTitleEl.textContent = "Highscore";
+        flexContainerEl.appendChild(scoreTitleEl);
     }
 }
 
