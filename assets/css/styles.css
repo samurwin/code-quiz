@@ -52,7 +52,9 @@ button:hover {
 /* question styles */
 .question-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    flex-direction: column-reverse;
     justify-content: center;
     max-width: 100%;
 }
@@ -66,6 +68,7 @@ button:hover {
 }
 .question h1 {
 text-align: left;
+width: 100%;
 }
 .question a {
     margin: 5px 0;
@@ -79,4 +82,29 @@ text-align: left;
 }
 .question a:hover {
     background-color: darkorchid;
+}
+.answer-status {
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    font-size: 28px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Final Score Form Styles */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.form-container input {
+    margin: 10px;
+    padding: 5px 10px;
+}
+.form-container h2 {
+    margin-top: 6px;
+}
+h2 {
+    font-weight: normal;
 }
