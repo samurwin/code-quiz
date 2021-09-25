@@ -4,6 +4,8 @@ var startButtonEl = document.querySelector("#btn-start");
 var pageContentEl = document.querySelector("#page-content");
 var timerEl = document.querySelector("#timer");
 var flexContainerEl = document.querySelector("#container");
+var time = 60;
+var timeLeft;
 
 var questionOne = {
     question: "Commonly used data types DO NOT include:",
@@ -102,9 +104,9 @@ var createQuestion = function(questions) {
 
 }
 
-timer = function() {
-    var time = timerEl.textContent;
-    var timeLeft = setInterval(function() {
+var timer = function() {
+  
+    timeLeft = setInterval(function() {
         if (time > 0){
             timerEl.textContent = time;
             time--;
@@ -115,7 +117,7 @@ timer = function() {
 }
 
 var startQuiz = function(event) {
-    timerEl.textContent = 75;
+    timerEl.textContent = time;
     timer();
 
     createQuestion(questions[currentQuestion]);
@@ -154,9 +156,8 @@ var checkAnswer = function(answerSubmitted) {
 }
 
 var wrongAnswer = function() {
-    var newTime = timerEl.textContent;
-    newTime = newTime - 10;
-    timerEl.textContent = newTime;
+    time = time - 10;
+    timerEl.textContent = time;
 }
 
 var nextQuestion = function() {
@@ -202,6 +203,8 @@ var endGame = function() {
     formContainerEl.appendChild(submitButtonEl);
 
     flexContainerEl.appendChild(endContainerEl);
+
+    clearInterval(timeLeft);
 }
 
 var submitScore = function(event) {
