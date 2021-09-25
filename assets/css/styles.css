@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+/* header styles */
+header {
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+}
+header a {
+    color: darkorchid;
+}
+h4, span {
+    font-weight: normal;
+}
+
+/* intro screen styles */
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px;
+}
+.intro p {
+    padding: 25px;
+    font-size: 18px;
+    width: 40%;
+    text-align: center;
+}
+button {
+    background-color: darkslateblue;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 10px;
+}
+button:hover {
+    background-color: darkorchid;
+}
+
+/* question styles */
+.question-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: center;
+    max-width: 100%;
+}
+.question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 50px;
+    background-color: white;
+}
+.question h1 {
+text-align: left;
+width: 100%;
+}
+.question a {
+    margin: 5px 0;
+    width: 200px;
+    background-color: darkslateblue;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.question a:hover {
+    background-color: darkorchid;
+}
+.answer-status {
+    text-align: center;
+    color: rgba(0,0,0,0.5);
+    font-size: 28px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Final Score Form Styles */
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.form-container input {
+    margin: 10px;
+    padding: 5px 10px;
+}
+.form-container h2 {
+    margin-top: 6px;
+}
+h2 {
+    font-weight: normal;
+}
+
+ h3 {
+    background-color: lavender;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: normal;
+    margin: 20px 0;
+    width: 30%;
+    text-align: center;
+}
