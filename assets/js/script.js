@@ -111,7 +111,7 @@ var timer = function() {
             timerEl.textContent = time;
             time--;
         } else {
-            alert("Time is up!");
+            endGame();
         }
     }, 1000);
 }
@@ -224,9 +224,20 @@ var viewScores = function(event) {
     
     if (targetEl.matches("#view-scores")) {
         startPageEl.remove();
+        flexContainerEl.innerHTML = '';
 
         var highScore = localStorage.getItem("score");
         highScore = JSON.parse(highScore);
+
+        var goBackEl = document.createElement("button");
+        goBackEl.setAttribute("type", "button");
+        goBackEl.textContent = "Go Back";
+        flexContainerEl.appendChild(goBackEl);
+
+        var clearScoresEl = document.createElement("button");
+        clearScoresEl.setAttribute("type", "button");
+        clearScoresEl.textContent = "Clear Score";
+        flexContainerEl.appendChild(clearScoresEl);
 
         var scoreEl = document.createElement("h3");
         scoreEl.textContent = highScore.name + " - " + highScore.score;
@@ -235,8 +246,19 @@ var viewScores = function(event) {
         var scoreTitleEl = document.createElement("h1");
         scoreTitleEl.textContent = "Highscore";
         flexContainerEl.appendChild(scoreTitleEl);
+
+        goBackEl.addEventListener("click", goBack);
+        clearScoresEl.addEventListener("click", clearScore);
     }
 }
+
+var goBack = function() {
+    location.reload();
+};
+
+var clearScore = function() {
+    localStorage.removeItem("score");
+};
 
 headerEl.addEventListener("click", viewScores);
 flexContainerEl.addEventListener("click", submitScore);

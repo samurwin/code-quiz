@@ -44,6 +44,7 @@ button {
     border: none;
     border-radius: 10px;
     font-size: 18px;
+    margin: 10px;
 }
 button:hover {
     background-color: darkorchid;
